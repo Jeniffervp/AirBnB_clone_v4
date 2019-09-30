@@ -10,12 +10,12 @@ if (typeof jQuery === 'function') {
     }
     $('.amenities ul li input[type=checkbox]').bind('click', saveCheck);
     $.get('http://localhost:5001/api/v1/status/', function (data) {
-      console.log(data.status)
+      console.log(data.status);
       if (data.status === 'OK') {
-        $('#api_status').addClass('available')
+        $('#api_status').addClass('available');
       } else {
-        $('#api_status').remove('available')
+        $('#api_status').remove('available');
       }
     });
   });
-};
+}
