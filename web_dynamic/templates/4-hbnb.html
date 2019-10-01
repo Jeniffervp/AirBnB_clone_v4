@@ -8,22 +8,23 @@
     <meta name="viewport" content="width=device-width">
     <title>Holberton AirBnB</title>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src="{{url_for('static', filename='scripts/2-hbnb.js')}}?{{cache_id}}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.3/handlebars.min.js"></script>
+    <script src="{{url_for('static', filename='scripts/3-hbnb.js')}}?{{cache_id}}"></script>
 
     <!-- FAVICON -->
 
-    <link rel="shortcut icon" href="{{ url_for('static', filename='images/icon.png') }}?{{cache_id}}">
-
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/icon.png')}}?{{cache_id}}">
     <!-- **********************
 	 CSS styles
 	 ********************** -->
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles/4-common.css') }}?{{cache_id}}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles/3-header.css') }}?{{cache_id}}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles/3-footer.css') }}?{{cache_id}}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles/6-filters.css') }}?{{cache_id}}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles/8-places.css') }}?{{cache_id}}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles/font-awesome.css') }}?{{cache_id}}">
+         <link rel="stylesheet" href="{{ url_for('static', filename='styles/4-common.css') }}?{{cache_id}}">
+         <link rel="stylesheet" href="{{ url_for('static', filename='styles/3-header.css') }}?{{cache_id}}">
+         <link rel="stylesheet" href="{{ url_for('static', filename='styles/3-footer.css') }}?{{cache_id}}">
+         <link rel="stylesheet" href="{{ url_for('static', filename='styles/6-filters.css') }}?{{cache_id}}">
+         <link rel="stylesheet" href="{{ url_for('static', filename='styles/8-places.css') }}?{{cache_id}}">
+         <link rel="stylesheet" href="{{ url_for('static', filename='styles/font-awesome.css') }}?{{cache_id}}">
+         
   </head>
 
   <!-- **********************
@@ -38,6 +39,7 @@
 
     <header>
         <div id="api_status" class="available">
+
         </div>
     </header>
     <main>
@@ -92,14 +94,13 @@
 	<section class="places">
 	  <h1>Places</h1>
 
-	  <!-- **********************
-	       BEGIN 1 PLACE
-	       ********************** -->
-
-	  {% for place in places|sort(attribute='name') %}
-
+	<!-- **********************
+	     BEGIN 1 PLACE
+	     ********************** -->
+	{% raw %}
+	<script id="place-template" type="text/x-handlebars-template">
 	  <article>
-
+	    
 	    <div class="title">
 
 	      <h2>{{ place.name }}</h2>
@@ -136,25 +137,24 @@
 	      </div>
 	    </div>
 
-	    <!-- **********************
-		 USER
-		 **********************  -->
+	            <!-- **********************
+         USER
+         **********************  -->
 
-	    <div class="user">
+		    <div class="user">
 
-	      <strong>Owner: {{ users[place.user_id] }}</strong>
+		      <strong>Owner: </strong>
 
-	    </div>
-	    <div class="description">
+		    </div>
+		    <div class="description">
 
-	      {{ place.description }}
-
-	    </div>
+		      <p>{{{ place.description }}} </p>
+		      
+		    </div>
 
 	  </article> <!-- End 1 PLACE Article -->
-
-	  {% endfor %}
-
+	</script>
+	{% endraw %}
 	</section>
       </div>
     </main>

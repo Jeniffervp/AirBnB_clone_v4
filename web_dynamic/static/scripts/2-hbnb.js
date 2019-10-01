@@ -9,13 +9,12 @@ if (typeof jQuery === 'function') {
       console.log(checkers);
     }
     $('.amenities ul li input[type=checkbox]').bind('click', saveCheck);
-    $.get('http://localhost:5001/api/v1/status/', function (data) {
-      console.log(data.status);
-      if (data.status === 'OK') {
-        $('#api_status').addClass('available');
-      } else {
-        $('#api_status').remove('available');
-      }
+
+    $.get('http://0.0.0.0:5001/api/v1/status/', function (resp) {
+      $('DIV#api_status').toggle(resp.status === 'OK', 'available');
+    }).fail(function () {
+      console.error('Error with Connection');
+      $('DIV#api_status').removeClass('available');
     });
   });
 }
