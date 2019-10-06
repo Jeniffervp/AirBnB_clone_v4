@@ -35,9 +35,9 @@ HBNB_MYSQL_HOST=localhost HBNB_MYSQL_DB=hbnb_test_db HBNB_TYPE_STORAGE=db \
 ## Environment
 
 * __OS:__ Ubuntu 14.04 LTS
-* __language:__ Python 3.4.3
+* __language:__ Javascript
 * __web server:__ nginx/1.4.6
-* __application server:__ Flask 0.12.2, Jinja2 2.9.6
+* __application server:__ Flask 0.12.2, Javascript
 * __web server gateway:__ gunicorn (version 19.7.1)
 * __database:__ mysql Ver 14.14 Distrib 5.7.18
 * __documentation:__ Swagger (flasgger==0.6.6)
@@ -45,6 +45,7 @@ HBNB_MYSQL_HOST=localhost HBNB_MYSQL_DB=hbnb_test_db HBNB_TYPE_STORAGE=db \
   * __python:__ PEP 8 (v. 1.7.0)
   * __web static:__ [W3C Validator](https://validator.w3.org/)
   * __bash:__ ShellCheck 0.3.3
+  * __web dynamic:__ Semistandard
 
 <img src="https://github.com/jarehec/AirBnB_clone_v3/blob/master/dev/hbnb_step5.png" />
 
@@ -148,7 +149,6 @@ $ ./dev/init_test.sh
 ```
 
 ---
-
 ### CLI Interactive Tests
 
 * This project uses python library, `cmd` to run tests in an interactive command
@@ -204,7 +204,13 @@ create: create [ARG] [PARAM 1] [PARAM 2] ...
     <dictionary representation>)`
 
 ---
+## Web dynamic
 
+This last part of the clone is dedicate to allows the search by amenities, verify the status of the api for the requests, consume the POST method from the api to search by amenities and maes the button search available.
+
+To make this possible we are using Javascript and jQuery to comunicate with the page and the api.
+
+---
 ### Continuous Integration Tests
 
 Uses [Travis-CI](https://travis-ci.org/) to run all tests on all commits to the
@@ -217,6 +223,8 @@ github repo
 * Kimberly Wong, [kjowong](https://github.com/kjowong) | [@kjowong](https://twitter.com/kjowong) | [kjowong@gmail.com](kjowong@gmail.com)
 * Carrie Ybay, [hicarrie](https://github.com/hicarrie) | [@hicarrie_](https://twitter.com/hicarrie_)
 * Jared Heck, [jarehec](https://github.com/jarehec) | [@jarehec](https://twitter.com/jarehec)
+* Fesus Rocuts, [fesusrocuts](https://github.com/fesusrocuts) | [@fesusrocuts](https://twitter.com/fesusrocuts)
+* Jeniffer Vanegas, [jeniffervp](https://github.com/Jeniffervp) | [@jeniffervaneg](https://twitter.com/jeniffervaneg)
 
 ## License
 
