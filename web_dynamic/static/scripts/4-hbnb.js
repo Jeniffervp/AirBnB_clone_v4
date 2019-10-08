@@ -71,3 +71,4 @@ const filtAmenity = function (data) {
       `).appendTo('section.places');
   }
 };
+//
